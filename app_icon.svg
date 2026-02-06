@@ -1,0 +1,62 @@
+<svg width="1024" height="1024" viewBox="0 0 1024 1024" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Background Gradient: Deep Modern Blue -->
+    <linearGradient id="bg_grad" x1="0" y1="0" x2="1024" y2="1024" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#3B82F6"/>
+      <stop offset="100%" stop-color="#1D4ED8"/>
+    </linearGradient>
+
+    <!-- Shadow for the central element -->
+    <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="20"/>
+      <feOffset dx="0" dy="15"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.25"/>
+      </feComponentTransfer>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1024" height="1024" fill="url(#bg_grad)"/>
+
+  <!-- Main Content Group -->
+  <g transform="translate(512, 512) scale(1.25)" filter="url(#shadow)">
+    
+    <!-- Clock/Timer Circle Track -->
+    <!-- Outer subtle ring -->
+    <circle cx="0" cy="0" r="320" stroke="white" stroke-width="40" stroke-opacity="0.15"/>
+    
+    <!-- Progress Arc (indicating time passing) - approx 270 degrees -->
+    <path d="M 0 -320 A 320 320 0 1 1 -226 -226" stroke="white" stroke-width="40" stroke-linecap="round" fill="none"/>
+    
+    <!-- Notification Bell / Alarm Indicator at top of ring -->
+    <g transform="translate(0, -320)">
+        <circle cx="0" cy="0" r="45" fill="#EF4444"/>
+        <circle cx="0" cy="0" r="15" fill="white"/>
+    </g>
+
+    <!-- Central Pill (Capsule) -->
+    <!-- Rotated 45 degrees -->
+    <g transform="rotate(45)">
+      <!-- Capsule Shape -->
+      <rect x="-100" y="-180" width="200" height="360" rx="100" fill="white"/>
+      
+      <!-- Bottom Half Coloring (Green for health) -->
+      <mask id="pillMask">
+        <rect x="-100" y="-180" width="200" height="360" rx="100" fill="white"/>
+      </mask>
+      <rect x="-100" y="0" width="200" height="180" fill="#10B981" mask="url(#pillMask)"/>
+      
+      <!-- Shine/Reflection for 3D effect -->
+      <path d="M -70 -140 Q -40 -160 20 -140 L 20 100 Q -40 120 -70 100 Z" fill="white" fill-opacity="0.2"/>
+    </g>
+    
+    <!-- Checkmark overlaid on Pill (Success/Done vibe) -->
+    <path d="M -25 -10 L 0 15 L 35 -20" stroke="#3B82F6" stroke-width="20" stroke-linecap="round" stroke-linejoin="round"/>
+
+  </g>
+</svg>
