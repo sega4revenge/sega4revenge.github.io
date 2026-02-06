@@ -376,11 +376,11 @@ h6 {
 
 .app-screenshot {
     width: 100%;
-    max-width: 350px;
+    max-width: 280px;
     height: auto;
-    border-radius: 40px;
-    box-shadow: 0 40px 80px rgba(102, 126, 234, 0.4),
-        0 20px 40px rgba(0, 0, 0, 0.1);
+    border-radius: 30px;
+    box-shadow: 0 30px 60px rgba(102, 126, 234, 0.4),
+        0 15px 30px rgba(0, 0, 0, 0.15);
 }
 
 /* ===========================
